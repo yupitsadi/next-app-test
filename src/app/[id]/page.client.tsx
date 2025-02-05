@@ -72,11 +72,11 @@ interface ClientPageProps {
   };
 }
 
-export default function ClientPage({ initialData, params }: ClientPageProps) {
+export default function ClientPage({ initialData}: ClientPageProps) {
   const { setWorkshopDetails } = useBooking();
   const router = useRouter();
 
-  const [workshopData, setWorkshopData] = useState<WorkshopDocument | null>(initialData);
+  const [workshopData] = useState<WorkshopDocument | null>(initialData);
   const [timeSlots, setTimeSlots] = useState<string[]>([]);
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
